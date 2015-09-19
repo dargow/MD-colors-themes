@@ -142,7 +142,7 @@ style "murrine-default" {
 		menustyle = 0 # 0 = none, 1 = vertical striped
 		progressbarstyle = 0 # 0 = none, 1 = diagonal striped, 2 = vertical striped
 		reliefstyle = 0 # 0 = flat, 1 = inset, 2 = shadow, 3 = shadow with gradient, 4 = stronger shadow with gradient
-		roundness = 2 # roundness of widgets
+		roundness = 0 # roundness of widgets
 		scrollbarstyle = 0 # 0 = none, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle = 0 # 0 = none, 1 = handles
 		stepperstyle = 1 # 0 = standard, 1 = integrated stepper handles
@@ -177,7 +177,7 @@ style "murrine-notebook" = "murrine-notebook-bg" {
 	ythickness = 2
 
 	engine "murrine" {
-		roundness = 2
+		roundness = 0
 	}
 }
 
@@ -222,7 +222,7 @@ style "murrine-scale" = "murrine-thin" {
 	bg[INSENSITIVE] = shade (0.95, @bg_color)
 
 	engine "murrine" {
-		roundness = 8
+		roundness = 0
 		gradient_shades = { 1.08, 1.08, 1.08, 1.08 }
 		border_shades = { 1.0, 1.0 }
 		trough_shades = { 1.08, 1.08 }
@@ -237,7 +237,7 @@ style "murrine-progressbar" = "murrine-thin" {
 	fg[PRELIGHT] = @selected_fg_color
 
 	engine "murrine" {
-		roundness = 2
+		roundness = 0
 		border_shades = { 1.2, 1.2 }
 		trough_border_shades = { 0.8, 0.8 }
 	}
@@ -270,7 +270,7 @@ style "murrine-tooltips" {
 
 	engine "murrine" {
 		textstyle = 0
-		roundness = 2
+		roundness = 0
 		rgba = FALSE
 	}
 }
@@ -692,9 +692,9 @@ widget "gtk-tooltip*" style "murrine-tooltips"
 
 widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "murrine-overlay-scrollbar"
 
-# Workarounds and Non-Standard Styling
+# Workas and Non-Standard Styling
 
-style "text-is-fg-color-workaround" {
+style "text-is-fg-color-worka" {
 	text[NORMAL] = @text_color
 	text[PRELIGHT] = @fg_color
 	text[SELECTED] = @selected_fg_color
@@ -702,9 +702,9 @@ style "text-is-fg-color-workaround" {
 	text[INSENSITIVE] = mix (0.5, @bg_color, @fg_color)
 }
 
-widget_class "*.<GtkComboBox>.<GtkCellView>" style "text-is-fg-color-workaround"
+widget_class "*.<GtkComboBox>.<GtkCellView>" style "text-is-fg-color-worka"
 
-style "fg-is-text-color-workaround" {
+style "fg-is-text-color-worka" {
 	fg[NORMAL] = @text_color
 	fg[PRELIGHT] = @text_color
 	fg[ACTIVE] = @selected_fg_color
@@ -712,11 +712,11 @@ style "fg-is-text-color-workaround" {
 	fg[INSENSITIVE] = darker (@fg_color)
 }
 
-widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"
-widget_class "*<GtkCList>" style "fg-is-text-color-workaround"
-widget_class "*<EelEditableLabel>" style "fg-is-text-color-workaround"
+widget_class "*<GtkListItem>*" style "fg-is-text-color-worka"
+widget_class "*<GtkCList>" style "fg-is-text-color-worka"
+widget_class "*<EelEditableLabel>" style "fg-is-text-color-worka"
 
-style "murrine-evo-new-button-workaround" {
+style "murrine-evo-new-button-worka" {
 	engine "murrine" {
 		toolbarstyle = 0
 	}
